@@ -3,9 +3,9 @@
 
 ## Data model
 
-[simple ORM](ERM-simple.png)
+![simple ORM](ERM-simple.png)
 
-[data model](ERM-details.png)
+![data model](ERM-details.png)
 
 ## Style Guide
 
