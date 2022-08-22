@@ -53,11 +53,16 @@ Login returns a token. All following functions work with this token.
 
 #### create new group
 
-	POST [baseURL]/group
+	POST [baseURL]/groups
 	
 #### create new group to a parent group
 
-	POST [baseURL]/group?parent=12345
+	POST [baseURL]/groups
+	
+	{
+		"parent": parentID,
+		...
+	}
 
 #### get all groups without any parent
 
@@ -73,25 +78,30 @@ getGroups with ID gets all sub groups to a parent ID (e.g. stories to a project)
 
 getGroups without ID and Parameter `depth` gets all groups and sub groups down to that level. For example all stories to a specific group:
 
-	GET [baseURL]/group/12345?depth=2
+	GET [baseURL]/groups/12345?depth=2
 
 Or all stories and tasks to a specific group:
 
-	GET [baseURL]/group/12345?depth=3
+	GET [baseURL]/groups/12345?depth=3
 
 #### update a group
 
-	UPDATE [baseURL]/group/ID
+	UPDATE [baseURL]/groups/ID
 
 #### delete a group
 
-	DELETE [baseURL]/group/ID
+	DELETE [baseURL]/groups/ID
 
 ### Log interaction
 
 #### create new log entry to a specific parent (group ID)
 
-	POST [baseURL]/logs/[parentID]
+	POST [baseURL]/logs
+	
+	{
+		"parent": groupID,
+		...
+	}
 	
 #### get all log entries to a specific parent (group ID)
 
@@ -99,8 +109,8 @@ Or all stories and tasks to a specific group:
 
 #### update a log entry
 
-	UPDATE [baseURL]/log/[ID]
+	UPDATE [baseURL]/logs/ID
 
 #### delete a log entry
 
-	DELETE [baseURL]/log/ID
+	DELETE [baseURL]/logs/ID
