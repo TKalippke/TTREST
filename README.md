@@ -1,9 +1,24 @@
 # Time Tracking RESTful API
 
+The documentation of time spent on projects is often the most annoying task that employees have to do in projects. Therefore, the documentation of activities is often done later or the time spent on the project is estimated. Both lead to incomplete or even missing activities that are not billed.
+
+Therefore, there are many applications and apps available to simplify time tracking. However, these are often part of complex applications, of which only a few functions are used. The costs of the applications therefore often exceed the benefit that time recording would bring.
+
+In addition, there is no standardised interface or data model available, so developers can create small apps that can be integrated into any IT landscape.
+
+This **Time Tracking RESTful API** (*TTREST*) is intended to help solve these problems. It is intended to provide a collection of API functions that can be picked up by different developers to implement different applications that work with the same functions.
+
+This will allow different applications to use the same middle ware to record time in any database.
 
 ## Data model
 
+The data model is based on two fundamental objects. On the one hand, on the log of times (*Log*) and on the other hand on the hierarchical grouping (*Group*) of parent structures (e.g. projects, stories and tasks). Each log entry is assigned to a parent group (e.g. a task).
+
+This model maps the hierarchy through a recursion of the groups. A project is therefore the parent group of projects. A project, in turn, is the parent group of tasks and the log entries are recorded for the tasks. This provides a further use for more extensive hierarchies with even more levels; in the same way, only one level can be used and all log entries can be recorded below it.
+
 ![simple ORM](ERM-simple.png)
+
+Each entry - no matter if group or log - is described by different fields. To ensure uniqueness, each object has an ID (*UUID*).
 
 ![data model](ERM-details.png)
 
