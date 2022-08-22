@@ -8,6 +8,8 @@ In addition, there is no standardised interface or data model available, so deve
 
 This **Time Tracking RESTful API** (*TTREST*) is intended to help solve these problems. It is intended to provide a collection of API functions that can be picked up by different developers to implement different applications that work with the same functions.
 
+![data model](MVC.png)
+
 This will allow different applications to use the same middle ware to record time in any database.
 
 ## Data model
